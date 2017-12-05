@@ -2,12 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "build",
+            "label": "build api",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/IdentityServer.csproj"
+                "${workspaceFolder}/APIServer/APIServer.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build identity",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/IdentityServer/IdentityServer.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -4,19 +4,49 @@
    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
    "version": "0.2.0",
    "configurations": [
+       {
+           "name": "api",
+           "type": "coreclr",
+           "request": "launch",
+           "preLaunchTask": "build api",
+           "program": "${workspaceRoot}/APIServer/bin/Debug/netcoreapp2.0/APIServer.dll",
+           "args": [],
+           "cwd": "${workspaceRoot}/APIServer",
+           "stopAtEntry": false,
+           "launchBrowser": {
+               "enabled": false,
+               "args": "${auto-detect-url}",
+               "windows": {
+                   "command": "cmd.exe",
+                   "args": "/C start ${auto-detect-url}"
+               },
+               "osx": {
+                   "command": "open"
+               },
+               "linux": {
+                   "command": "xdg-open"
+               }
+           },
+           "env": {
+               "ASPNETCORE_ENVIRONMENT": "Development"
+           },
+           "sourceFileMap": {
+               "/Views": "${workspaceRoot}/APIServer/Views"
+           }
+       },
         {
-            "name": ".NET Core Launch (web)",
+            "name": "identity",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build identity",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.0/IdentityServer.dll",
+            "program": "${workspaceFolder}/IdentityServer/bin/Debug/netcoreapp2.0/IdentityServer.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/IdentityServer",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
-                "enabled": true,
+                "enabled": false,
                 "args": "${auto-detect-url}",
                 "windows": {
                     "command": "cmd.exe",
@@ -33,7 +63,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+                "/Views": "${workspaceFolder}/IdentityServer/Views"
             }
         },
         {
