@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>示例说明</h2>
+        <ul>
+            <li>About页面需要认证后才能访问</li>
+            <li>用户名：mail@qq.com</li>
+            <li>密码：password</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>API</h2>
+        <ul>
+            <li>API页面演示了使用access_token从API Server获取数据</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>注销</h2>
+        <ul>
+            <li><a asp-controller="home" asp-action="logout">注销</a></li>
+        </ul>
+    </div>
+
+</div>

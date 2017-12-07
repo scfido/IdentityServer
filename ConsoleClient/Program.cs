@@ -37,7 +37,7 @@ namespace Client
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await client.GetAsync("http://localhost:5001/identity");
+            var response = await client.GetAsync("http://localhost:5001/api/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);

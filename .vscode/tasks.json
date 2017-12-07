@@ -2,6 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build mvc",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/MvcClient/MvcClient.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "build api",
             "command": "dotnet",
             "type": "process",

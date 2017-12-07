@@ -27,8 +27,11 @@ namespace IdentityServer
             services.AddIdentityServer()
                 .AddSigningCredential(new X509Certificate2(@"socialnetwork.pfx", "11111"))
                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
+                .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources())
                 .AddInMemoryClients(InMemoryConfiguration.Clients())
                 .AddInMemoryApiResources(InMemoryConfiguration.ApiResources());
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +43,8 @@ namespace IdentityServer
             }
 
             app.UseIdentityServer();
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

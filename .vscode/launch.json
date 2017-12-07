@@ -4,6 +4,36 @@
    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
    "version": "0.2.0",
    "configurations": [
+    {
+        "name": "mvc",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build mvc",
+        "program": "${workspaceRoot}/MvcClient/bin/Debug/netcoreapp2.0/MvcClient.dll",
+        "args": [],
+        "cwd": "${workspaceRoot}/MvcClient",
+        "stopAtEntry": false,
+        "launchBrowser": {
+            "enabled": false,
+            "args": "${auto-detect-url}",
+            "windows": {
+                "command": "cmd.exe",
+                "args": "/C start ${auto-detect-url}"
+            },
+            "osx": {
+                "command": "open"
+            },
+            "linux": {
+                "command": "xdg-open"
+            }
+        },
+        "env": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "sourceFileMap": {
+            "/Views": "${workspaceRoot}/MvcClient/Views"
+        }
+    },
        {
            "name": "api",
            "type": "coreclr",
