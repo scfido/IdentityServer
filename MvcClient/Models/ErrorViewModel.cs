@@ -1,6 +1,6 @@
 using System;
 
-namespace IdentityServer.Models
+namespace Xunmei.IdentityServer
 {
     public class ErrorViewModel
     {

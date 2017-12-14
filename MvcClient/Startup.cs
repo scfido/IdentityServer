@@ -36,12 +36,12 @@ namespace IdentityServer
                 options.SignInScheme = "Cookies";
                 options.Authority = "http://localhost:5000";
                 options.RequireHttpsMetadata = false;
-                options.ClientId = "mvc_code";
-                options.ClientSecret = "12345";
+                options.ClientId = "mvc";
+                options.ClientSecret = "secret";
                 options.ResponseType = "id_token code";
-                options.Scope.Add("cms");
+                options.Scope.Add("api1");
                 options.Scope.Add("offline_access");
-                options.Scope.Add("email");
+                //options.Scope.Add("email");
                 options.SaveTokens = true;
                 options.GetClaimsFromUserInfoEndpoint = true;
             });

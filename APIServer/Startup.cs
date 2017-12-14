@@ -28,7 +28,7 @@ namespace APIServer
                 .AddIdentityServerAuthentication(options =>{
                     options.Authority="http://localhost:5000";
                     options.RequireHttpsMetadata = false;
-                    options.ApiName = "cms";
+                    options.ApiName = "api1";
                 });
 
             services.AddMvcCore()

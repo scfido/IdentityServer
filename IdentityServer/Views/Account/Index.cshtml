@@ -1,0 +1,35 @@
+﻿@using Xunmei.IdentityServer
+@using System.Collections.Generic
+
+<h2>账户</h2>
+
+<div class="row">
+    <div class="col-md-24">
+        <table  class="table">
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>锁定</th>
+                <th>锁定时间</th>
+                </tr>
+            </thead>
+            <tbody>
+        @{
+            IEnumerable<ApplicationUser> users = ViewData["Users"] as IEnumerable<ApplicationUser>;
+            foreach(var user in users)
+            {
+                <tr>
+                    <th>@user.Id</th>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.LockoutEnabled</td>
+                    <td>@user.LockoutEnd</td>
+                </tr>
+            }
+        }
+        </tbody>
+        </table>
+    </div>
+</div>
