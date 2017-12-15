@@ -29,6 +29,7 @@ namespace Xunmei.IdentityServer
 
         private static void EnsureSeedData(ConfigurationDbContext context)
         {
+           
             if (!context.Clients.Any())
             {
                 Console.WriteLine("Clients being populated");

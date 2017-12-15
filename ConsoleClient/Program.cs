@@ -8,9 +8,9 @@ namespace Client
 {
     class Program
     {
-        public static void Main(string[] args) => MainAsync().GetAwaiter().GetResult();
+        public static void Main(string[] args) => MainAsync(args).GetAwaiter().GetResult();
 
-        private static async Task MainAsync()
+        private static async Task MainAsync(string[] args)
         {
             // discover endpoints from metadata
             var disco = await DiscoveryClient.GetAsync("http://localhost:5000");
@@ -21,9 +21,18 @@ namespace Client
             }
 
             // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
-
+            TokenClient tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
+            TokenResponse tokenResponse;
+            if (args?.Length >= 2)
+            {
+                tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+                tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync(args[0], args[1], "api1");
+            }
+            else
+            {
+                tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
+                tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
+            }
             if (tokenResponse.IsError)
             {
                 Console.WriteLine(tokenResponse.Error);

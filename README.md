@@ -2,11 +2,12 @@
 
 本项目是使用Identity Server 4建立的认证服务。
 
-解决方案中一共4个项目：
+解决方案中一共5个项目：
 - IdentityServer是认证服务
 - APIServer 提供了一个需要认证才能访问的API
 - ConsoleClient 演示一个无用户参与的客户端，使用AppId和Secret访问API
 - MvcClient 演示有用户参与的客户端，除了AppId和Secret以外，还需要用户登陆。
+- ReactClient 演示基于React的纯JS客户端
 
 # 使用
 ## 获取项目
@@ -115,6 +116,13 @@ dotnet run
 正常可以看到类似以下输出。
 ![](/assets/drafts/README/img/2017-12-14-17-10-22.png)
 
+这是使用客户端证书模式认证，下面使用用户名和密码模式认证。该模式API Server就可以在请求信息中获取到用户标识，通过该信息可以为每个用户或角色授权。
+```
+dotnet run -- admin@xunmei.com 123456
+```
+
+后面两个参数分别是用户名和密码。
+
 ## 测试MVC Client
 MVC客户端就是一个网站，先运行起来。 
 进入`MvcClient`目录
@@ -128,3 +136,9 @@ dotnet run
 4. 点击MvcClient网站首页的`API`链接
 5. 显示从APIServer获取到的数据
 
+## 测试React Client
+进入`ReactClient`目录
+```
+npm install
+npm start
+```
