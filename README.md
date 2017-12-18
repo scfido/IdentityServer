@@ -137,8 +137,11 @@ dotnet run
 5. 显示从APIServer获取到的数据
 
 ## 测试React Client
+
 进入`ReactClient`目录
 ```
 npm install
 npm start
 ```
+
+依次点击Login、Call API、Logout来测试。

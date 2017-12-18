@@ -12,7 +12,6 @@ namespace Xunmei.IdentityServer
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer";
-            // NLog: setup the logger first to catch all errors
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
             var seed = args.Contains("/seed");
@@ -33,8 +32,8 @@ namespace Xunmei.IdentityServer
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseNLog()
                 .UseStartup<Startup>()
+                .UseNLog()
                 .Build();
     }
 }
