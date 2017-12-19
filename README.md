@@ -12,8 +12,8 @@
 # 使用
 ## 获取项目
 ```
-git clone http://github.cd.xunmei.com/dev/identityserver.git
-cd identityserver
+git clone https://github.com/scfido/IdentityServer.git
+cd IdentityServer
 ```
 
 ## 初始化数据库
