@@ -145,3 +145,29 @@ npm start
 ```
 
 依次点击Login、Call API、Logout来测试。
+
+# 第三方登陆
+## QQ
+
+使用QQ登陆首先要去[QQ互联](http://connect.qq.com)注册成为开发人员，然后创建应用，创建好后将`AppId`和`AppKey`参数传入。
+AppId和AppKey是机密信息，为了防止泄露我使用ASP.Net Core的Secret Manager来管理。
+
+使用你自己应用的AppId和AppKey提换下面的值后执行命令。
+```
+dotnet user-secrets set connect.qq.appid 123
+dotnet user-secrets set connect.qq.appkey 456
+```
+
+User Secrets文件存放路径
+
+- Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
+- Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+- Mac: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+
+# 参考文档
+- IdentityServer4 官方文档   
+http://docs.identityserver.io/en/release/
+- 使用Identity Server 4建立Authorization Server系列文章  
+http://www.cnblogs.com/cgzl/p/7746496.html
+- Safe storage of app secrets during development in ASP.NET Core  
+https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?tabs=visual-studio-code
