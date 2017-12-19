@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClient", "MvcClient\MvcClient.csproj", "{51D040E7-3993-443D-AB98-7D87A7955CFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNetCore.Authentication.QQ", "Microsoft.AspNetCore.Authentication.QQConnect\Microsoft.AspNetCore.Authentication.QQ.csproj", "{3AB4192D-7671-49F2-8932-36409719242E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{51D040E7-3993-443D-AB98-7D87A7955CFD}.Release|x64.Build.0 = Release|x64
 		{51D040E7-3993-443D-AB98-7D87A7955CFD}.Release|x86.ActiveCfg = Release|x86
 		{51D040E7-3993-443D-AB98-7D87A7955CFD}.Release|x86.Build.0 = Release|x86
+		{3AB4192D-7671-49F2-8932-36409719242E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB4192D-7671-49F2-8932-36409719242E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB4192D-7671-49F2-8932-36409719242E}.Debug|x64.ActiveCfg = Debug|x64
+		{3AB4192D-7671-49F2-8932-36409719242E}.Debug|x64.Build.0 = Debug|x64
+		{3AB4192D-7671-49F2-8932-36409719242E}.Debug|x86.ActiveCfg = Debug|x86
+		{3AB4192D-7671-49F2-8932-36409719242E}.Debug|x86.Build.0 = Debug|x86
+		{3AB4192D-7671-49F2-8932-36409719242E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB4192D-7671-49F2-8932-36409719242E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB4192D-7671-49F2-8932-36409719242E}.Release|x64.ActiveCfg = Release|x64
+		{3AB4192D-7671-49F2-8932-36409719242E}.Release|x64.Build.0 = Release|x64
+		{3AB4192D-7671-49F2-8932-36409719242E}.Release|x86.ActiveCfg = Release|x86
+		{3AB4192D-7671-49F2-8932-36409719242E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
